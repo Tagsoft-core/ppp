@@ -48,12 +48,7 @@
         "nunomaduro/collision": "^4.1",
         "phpunit/phpunit": "^8.5"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url":  "https://github.com/jeremykenedy/Generators-1.git"
-        }
-    ],
+
     "config": {
         "optimize-autoloader": true,
         "preferred-install": "dist",
