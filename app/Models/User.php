@@ -163,4 +163,9 @@ class User extends Authenticatable
     {
         return $this->profiles()->detach($profile);
     }
+
+    public function requests()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

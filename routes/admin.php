@@ -28,4 +28,10 @@ Route::group(['middleware' => ['auth', 'activated', 'role:admin', 'activity', 't
     Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
     Route::get('routes', 'AdminDetailsController@listRoutes');
     Route::get('active-users', 'AdminDetailsController@activeUsers');
+
+    Route::name('order.')->prefix('order')->group(function () {
+        Route::get('/list', [App\Http\Controllers\OrderController::class, 'index'])->name('list');
+        Route::get('/create', [App\Http\Controllers\OrderController::class, 'create'])->name('create');
+        Route::post('/insert', [App\Http\Controllers\OrderController::class, 'insert'])->name('insert');
+    });
 });
