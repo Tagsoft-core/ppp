@@ -72,12 +72,10 @@ class RegisterController extends Controller
                 'email'                 => 'required|email|max:255|unique:users',
                 'password'              => 'required|min:6|max:30|confirmed',
                 'password_confirmation' => 'required|same:password',
-                'g-recaptcha-response'  => '',
-                'captcha'               => 'required|min:1',
             ],
             [
-                'name.unique'                   => trans('auth.userNameTaken'),
-                'name.required'                 => trans('auth.userNameRequired'),
+                'name.unique'                   => 'Name needs to be unique',
+                'name.required'                 => 'Name is required',
                 'first_name.required'           => trans('auth.fNameRequired'),
                 'last_name.required'            => trans('auth.lNameRequired'),
                 'email.required'                => trans('auth.emailRequired'),
@@ -105,8 +103,6 @@ class RegisterController extends Controller
 
         $user = User::create([
             'name'              => $data['name'],
-            'first_name'        => $data['first_name'],
-            'last_name'         => $data['last_name'],
             'email'             => $data['email'],
             'password'          => Hash::make($data['password']),
             'token'             => str_random(64),

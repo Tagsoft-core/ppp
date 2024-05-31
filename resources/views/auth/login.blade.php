@@ -32,11 +32,11 @@
                                             <span class="input-group-text" id="inputGroupPrepend">@</span>
                                             <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                                            @error('email')
-                                            <span class="invalid-feedback" role="alert">
-                                                <strong>{{ $message }}</strong>
-                                            </span>
-                                            @enderror
+                                            @if ($errors->has('email'))
+                                                <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('email') }}</strong>
+                                    </span>
+                                            @endif
 
                                         </div>
                                     </div>
@@ -45,11 +45,11 @@
                                         <label for="yourPassword" class="form-label">Password</label>
                                         <input type="password" name="password" class="form-control @error('password') is-invalid @enderror" id="yourPassword" required autocomplete="current-password">
 
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        @if ($errors->has('password'))
+                                            <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                        @enderror
+                                        @endif
                                     </div>
 
                                     <div class="col-12">

@@ -31,22 +31,22 @@
                                         <label for="name" class="form-label">Your Name</label>
                                         <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
 
-                                        @error('name')
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        @if ($errors->has('name'))
+                                            <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('name') }}</strong>
                                     </span>
-                                        @enderror
+                                        @endif
                                     </div>
 
                                     <div class="col-12">
                                         <label for="email" class="form-label">Your Email</label>
                                         <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                                        @error('email')
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        @if ($errors->has('email'))
+                                            <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('email') }}</strong>
                                     </span>
-                                        @enderror
+                                        @endif
                                     </div>
 
 
@@ -54,11 +54,11 @@
                                         <label for="password" class="form-label">Password</label>
                                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="new-password">
 
-                                        @error('password')
-                                        <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
+                                        @if ($errors->has('password'))
+                                            <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('password') }}</strong>
                                     </span>
-                                        @enderror
+                                        @endif
 
                                     </div>
 
