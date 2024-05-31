@@ -14,7 +14,7 @@
 						<p>{{ trans('auth.regThanks') }}</p>
 						<p>{{ trans('auth.anEmailWasSent',['email' => $email, 'date' => $date ] ) }}</p>
 						<p>{{ trans('auth.clickInEmail') }}</p>
-						<p><a href='/activation' class="btn btn-primary">{{ trans('auth.clickHereResend') }}</a></p>
+						<p><a href='{{url('/activation')}}' class="btn btn-primary">{{ trans('auth.clickHereResend') }}</a></p>
 					</div>
 				</div>
 			</div>
