@@ -49,6 +49,47 @@
                                         @endif
                                     </div>
 
+                                    <div class="col-12">
+                                        <label for="city" class="form-label">Your City</label>
+                                        <input id="city" type="text" class="form-control @error('city') is-invalid @enderror" name="city" value="{{ old('city') }}" required>
+
+                                        @if ($errors->has('city'))
+                                            <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('city') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="state" class="form-label">Your State</label>
+                                        <input id="state" type="text" class="form-control @error('state') is-invalid @enderror" name="state" value="{{ old('state') }}" required autocomplete="state" autofocus>
+
+                                        @if ($errors->has('state'))
+                                            <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('state') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="zip_code" class="form-label">Your Zip code</label>
+                                        <input id="zip_code" type="number" class="form-control @error('zip_code') is-invalid @enderror" name="zip_code" value="{{ old('zip_code') }}" required autofocus>
+
+                                        @if ($errors->has('zip_code'))
+                                            <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('zip_code') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
+
+                                    <div class="col-12">
+                                        <label for="community" class="form-label">Your Community</label>
+                                        <input id="community" type="text" class="form-control @error('community') is-invalid @enderror" name="community" value="{{ old('community') }}" required autofocus>
+
+                                        @if ($errors->has('community'))
+                                            <span class="invalid-feedback">
+                                        <strong>{{ $errors->first('community') }}</strong>
+                                    </span>
+                                        @endif
+                                    </div>
 
                                     <div class="col-12">
                                         <label for="password" class="form-label">Password</label>

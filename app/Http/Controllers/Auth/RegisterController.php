@@ -67,8 +67,10 @@ class RegisterController extends Controller
             $data,
             [
                 'name'                  => 'required|max:255|unique:users',
-                'first_name'            => '',
-                'last_name'             => '',
+                'city'                  => 'required|max:255',
+                'state'                 => 'required|max:255',
+                'zip_code'              => 'required|max:255',
+                'community'             => 'required|max:255',
                 'email'                 => 'required|email|max:255|unique:users',
                 'password'              => 'required|min:6|max:30|confirmed',
                 'password_confirmation' => 'required|same:password',
@@ -104,6 +106,10 @@ class RegisterController extends Controller
         $user = User::create([
             'name'              => $data['name'],
             'email'             => $data['email'],
+            'city'              => $data['city'],
+            'state'             => $data['state'],
+            'zip_code'          => $data['zip_code'],
+            'community'         => $data['community'],
             'password'          => Hash::make($data['password']),
             'token'             => str_random(64),
             'signup_ip_address' => $ipAddress->getClientIp(),
