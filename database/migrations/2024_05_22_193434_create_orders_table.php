@@ -22,6 +22,7 @@ class CreateOrdersTable extends Migration
             $table->string('ref_link')->nullable();
             $table->date('pickup_date');
             $table->integer('status')->default(1);
+            $table->longText('qr_code')->nullable();
             $table->timestamps();
         });
     }

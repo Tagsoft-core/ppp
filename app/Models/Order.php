@@ -19,7 +19,8 @@ class Order extends Model
         'order_from',
         'ref_link',
         'pickup_date',
-        'status'
+        'status',
+        'qr_code'
     ];
 
     public function user()
