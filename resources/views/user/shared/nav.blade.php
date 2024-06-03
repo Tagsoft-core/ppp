@@ -12,7 +12,7 @@
 
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
+            <a class="nav-link collapsed" href="{{url('profile/'.auth()->user()->name. '/edit')}}">
                 <i class="bi bi-person"></i>
                 <span>Profile</span>
             </a>
@@ -33,14 +33,14 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
+            <a class="nav-link collapsed" target="_blank" href="https://demo.developmentsvr.com/Pickpack/faqs/">
                 <i class="bi bi-question-circle"></i>
                 <span>F.A.Q</span>
             </a>
         </li><!-- End F.A.Q Page Nav -->
 
         <li class="nav-item">
-            <a class="nav-link collapsed" href="#">
+            <a class="nav-link collapsed" href="{{route('user.contact')}}">
                 <i class="bi bi-envelope"></i>
                 <span>Contact</span>
             </a>

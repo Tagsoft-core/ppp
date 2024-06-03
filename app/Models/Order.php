@@ -15,6 +15,7 @@ class Order extends Model
     protected $fillable = [
         'user_id',
         'title',
+        'slug',
         'description',
         'order_from',
         'ref_link',
@@ -22,6 +23,12 @@ class Order extends Model
         'status',
         'qr_code'
     ];
+
+    public function setTitleAttribute($value)
+    {
+        $this->attributes['title'] = $value;
+        $this->attributes['slug'] = str_slug('PPP-'. $value. rand(0, 9999), '-');
+    }
 
     public function user()
     {

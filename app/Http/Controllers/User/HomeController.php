@@ -26,4 +26,14 @@ class HomeController extends Controller
     {
         return view('user.home');
     }
+
+    /**
+     * Show the contact page
+     *
+     * @return \Illuminate\Contracts\Support\Renderable
+     */
+    public function contact()
+    {
+        return view('user.contact');
+    }
 }

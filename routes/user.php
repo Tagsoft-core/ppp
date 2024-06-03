@@ -37,6 +37,8 @@ Route::group(['middleware' => ['auth', 'activated', 'currentUser', 'activity', '
     Route::post('avatar/upload', ['as' => 'avatar.upload', 'uses' => 'ProfilesController@upload']);
 
     Route::name('user.')->prefix('user')->group(function () {
+        Route::get('/contact', [App\Http\Controllers\User\HomeController::class, 'contact'])->name('contact');
+
         Route::name('order.')->prefix('order')->group(function () {
             Route::get('/list', [App\Http\Controllers\User\OrderController::class, 'browse'])->name('list');
             Route::get('/create', [App\Http\Controllers\User\OrderController::class, 'create'])->name('create');

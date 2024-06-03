@@ -27,6 +27,7 @@
                                 <thead>
                                 <tr>
                                     <th>QR</th>
+                                    <th>Identifier</th>
                                     <th>Title | Product Title</th>
                                     <th>Description</th>
                                     <th>Ordered From</th>
@@ -40,6 +41,7 @@
                                 @foreach($requests as $request)
                                 <tr>
                                     <td>{!! $request->qr_code !!}</td>
+                                    <td>{{$request->slug}}</td>
                                     <td>{{$request->title}}</td>
                                     <td>{{$request->description}}</td>
                                     <td>{{$request->order_from}}</td>

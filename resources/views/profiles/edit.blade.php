@@ -67,72 +67,76 @@
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="form-group has-feedback {{ $errors->has('theme') ? ' has-error ' : '' }}">
-                                                        {!! Form::label('theme_id', trans('profile.label-theme') , array('class' => 'col-12 control-label')); !!}
+                                                    {{--<div class="form-group has-feedback {{ $errors->has('theme') ? ' has-error ' : '' }}">--}}
+                                                        {{--{!! Form::label('theme_id', trans('profile.label-theme') , array('class' => 'col-12 control-label')); !!}--}}
+                                                        {{--<div class="col-12">--}}
+                                                            {{--<select class="form-control" name="theme_id" id="theme_id">--}}
+                                                                {{--@if ($themes->count())--}}
+                                                                    {{--@foreach($themes as $theme)--}}
+                                                                      {{--<option value="{{ $theme->id }}"{{ $currentTheme->id == $theme->id ? 'selected="selected"' : '' }}>{{ $theme->name }}</option>--}}
+                                                                    {{--@endforeach--}}
+                                                                {{--@endif--}}
+                                                            {{--</select>--}}
+                                                            {{--<span class="glyphicon {{ $errors->has('theme') ? ' glyphicon-asterisk ' : ' ' }} form-control-feedback" aria-hidden="true"></span>--}}
+                                                            {{--@if ($errors->has('theme'))--}}
+                                                                {{--<span class="help-block">--}}
+                                                                    {{--<strong>{{ $errors->first('theme') }}</strong>--}}
+                                                                {{--</span>--}}
+                                                            {{--@endif--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                    <div class="form-group has-feedback {{ $errors->has('city') ? ' has-error ' : '' }}">
+                                                        {!! Form::label('city', 'Your City' , array('class' => 'col-12 control-label')); !!}
                                                         <div class="col-12">
-                                                            <select class="form-control" name="theme_id" id="theme_id">
-                                                                @if ($themes->count())
-                                                                    @foreach($themes as $theme)
-                                                                      <option value="{{ $theme->id }}"{{ $currentTheme->id == $theme->id ? 'selected="selected"' : '' }}>{{ $theme->name }}</option>
-                                                                    @endforeach
-                                                                @endif
-                                                            </select>
-                                                            <span class="glyphicon {{ $errors->has('theme') ? ' glyphicon-asterisk ' : ' ' }} form-control-feedback" aria-hidden="true"></span>
-                                                            @if ($errors->has('theme'))
+                                                            {!! Form::text('city', old('city', $user->city), array('id' => 'city', 'class' => 'form-control', 'placeholder' => 'Your City')) !!}
+                                                            <span class="glyphicon {{ $errors->has('city') ? ' glyphicon-asterisk ' : ' glyphicon-pencil ' }} form-control-feedback" aria-hidden="true"></span>
+                                                            @if ($errors->has('city'))
                                                                 <span class="help-block">
-                                                                    <strong>{{ $errors->first('theme') }}</strong>
+                                                                    <strong>{{ $errors->first('city') }}</strong>
                                                                 </span>
                                                             @endif
                                                         </div>
                                                     </div>
-                                                    <div class="form-group has-feedback {{ $errors->has('location') ? ' has-error ' : '' }}">
-                                                        {!! Form::label('location', trans('profile.label-location') , array('class' => 'col-12 control-label')); !!}
-                                                        <div class="col-12">
-                                                            {!! Form::text('location', old('location'), array('id' => 'location', 'class' => 'form-control', 'placeholder' => trans('profile.ph-location'))) !!}
-                                                            <span class="glyphicon {{ $errors->has('location') ? ' glyphicon-asterisk ' : ' glyphicon-pencil ' }} form-control-feedback" aria-hidden="true"></span>
-                                                            @if ($errors->has('location'))
-                                                                <span class="help-block">
-                                                                    <strong>{{ $errors->first('location') }}</strong>
+                                                <div class="form-group has-feedback {{ $errors->has('state') ? ' has-error ' : '' }}">
+                                                    {!! Form::label('state', 'Your State' , array('class' => 'col-12 control-label')); !!}
+                                                    <div class="col-12">
+                                                        {!! Form::text('state', old('state', $user->state), array('id' => 'state', 'class' => 'form-control', 'placeholder' => 'Your State')) !!}
+                                                        <span class="glyphicon {{ $errors->has('state') ? ' glyphicon-asterisk ' : ' glyphicon-pencil ' }} form-control-feedback" aria-hidden="true"></span>
+                                                        @if ($errors->has('state'))
+                                                            <span class="help-block">
+                                                                    <strong>{{ $errors->first('state') }}</strong>
                                                                 </span>
-                                                            @endif
-                                                        </div>
+                                                        @endif
                                                     </div>
-                                                    <div class="form-group has-feedback {{ $errors->has('bio') ? ' has-error ' : '' }}">
-                                                        {!! Form::label('bio', trans('profile.label-bio') , array('class' => 'col-12 control-label')); !!}
+                                                </div>
+
+                                                <div class="form-group has-feedback {{ $errors->has('zip_code') ? ' has-error ' : '' }}">
+                                                    {!! Form::label('zip_code', 'Your Zip Code' , array('class' => 'col-12 control-label')); !!}
+                                                    <div class="col-12">
+                                                        {!! Form::number('zip_code', old('zip_code', $user->zip_code), array('id' => 'zip_code', 'class' => 'form-control', 'placeholder' => 'Your Zip Code')) !!}
+                                                        <span class="glyphicon {{ $errors->has('zip_code') ? ' glyphicon-asterisk ' : ' glyphicon-pencil ' }} form-control-feedback" aria-hidden="true"></span>
+                                                        @if ($errors->has('zip_code'))
+                                                            <span class="help-block">
+                                                                    <strong>{{ $errors->first('zip_code') }}</strong>
+                                                                </span>
+                                                        @endif
+                                                    </div>
+                                                </div>
+
+                                                    <div class="form-group has-feedback {{ $errors->has('community') ? ' has-error ' : '' }}">
+                                                        {!! Form::label('community', 'Your Community' , array('class' => 'col-12 control-label')); !!}
                                                         <div class="col-12">
-                                                            {!! Form::textarea('bio', old('bio'), array('id' => 'bio', 'class' => 'form-control', 'placeholder' => trans('profile.ph-bio'))) !!}
+                                                            {!! Form::textarea('community', old('community', $user->community), array('id' => 'community', 'class' => 'form-control', 'placeholder' => 'Your Community')) !!}
                                                             <span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true"></span>
-                                                            @if ($errors->has('bio'))
+                                                            @if ($errors->has('community'))
                                                                 <span class="help-block">
-                                                                    <strong>{{ $errors->first('bio') }}</strong>
+                                                                    <strong>{{ $errors->first('community') }}</strong>
                                                                 </span>
                                                             @endif
                                                         </div>
                                                     </div>
-                                                    <div class="form-group has-feedback {{ $errors->has('twitter_username') ? ' has-error ' : '' }}">
-                                                        {!! Form::label('twitter_username', trans('profile.label-twitter_username') , array('class' => 'col-12 control-label')); !!}
-                                                        <div class="col-12">
-                                                            {!! Form::text('twitter_username', old('twitter_username'), array('id' => 'twitter_username', 'class' => 'form-control', 'placeholder' => trans('profile.ph-twitter_username'))) !!}
-                                                            <span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true"></span>
-                                                            @if ($errors->has('twitter_username'))
-                                                                <span class="help-block">
-                                                                    <strong>{{ $errors->first('twitter_username') }}</strong>
-                                                                </span>
-                                                            @endif
-                                                        </div>
-                                                    </div>
-                                                    <div class="margin-bottom-2 form-group has-feedback {{ $errors->has('github_username') ? ' has-error ' : '' }}">
-                                                        {!! Form::label('github_username', trans('profile.label-github_username') , array('class' => 'col-12 control-label')); !!}
-                                                        <div class="col-12">
-                                                            {!! Form::text('github_username', old('github_username'), array('id' => 'github_username', 'class' => 'form-control', 'placeholder' => trans('profile.ph-github_username'))) !!}
-                                                            <span class="glyphicon glyphicon-pencil form-control-feedback" aria-hidden="true"></span>
-                                                            @if ($errors->has('github_username'))
-                                                                <span class="help-block">
-                                                                    <strong>{{ $errors->first('github_username') }}</strong>
-                                                                </span>
-                                                            @endif
-                                                        </div>
-                                                    </div>
+
+
                                                     <div class="form-group margin-bottom-2">
                                                         <div class="col-12">
                                                             {!! Form::button(

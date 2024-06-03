@@ -52,11 +52,11 @@ class OrderController extends Controller
     public function insert(Request $request)
     {
         $this->validate($request, [
-           'title'  => ['required', 'string', 'max:500'],
-           'description'    => ['nullable', 'string', 'max:5000'],
-           'order_from'     => ['required', 'string', 'max:500'],
-            'ref_link'      => ['required', 'string', 'max:1000'],
-            'pickup_date'   => ['required', 'date']
+            'title'          => ['required', 'string', 'max:500'],
+            'description'    => ['nullable', 'string', 'max:5000'],
+            'order_from'     => ['required', 'string', 'max:500'],
+            'ref_link'       => ['required', 'string', 'max:1000'],
+            'pickup_date'    => ['required', 'date']
         ]);
 
         $request->merge(['user_id' => Auth::user()->id]);
@@ -72,7 +72,7 @@ class OrderController extends Controller
 //            QrCode::size(150)->backgroundColor(255, 0, 0)->generate('https://minhazulmin.github.io/');
 //        $qrCodes['styleDot'] =
 //            QrCode::size(150)->style('dot')->generate('https://minhazulmin.github.io/');
-        $qrCode = QrCode::size(150)->style('square')->generate('Title: ' .$order->title.'.' .'Reference Link:'  );
+        $qrCode = QrCode::size(150)->style('square')->generate($order->slug .'. Title: ' .$order->title.'.' .'Reference Link:' .'<a href="'.$order->ref_link.'">'. $order->ref_link. '</a>' );
         //$qrCodes['styleRound'] = QrCode::size(150)->style('round')->generate('https://minhazulmin.github.io/');
         $order->qr_code = $qrCode;
         $order->update();

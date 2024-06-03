@@ -2,9 +2,9 @@
 <header id="header" class="header fixed-top d-flex align-items-center">
 
     <div class="d-flex align-items-center justify-content-between">
-        <a href="index.php" class="logo d-flex align-items-center">
+        <a href="{{url('home')}}" class="logo d-flex align-items-center">
             <img src="{{asset('assets/img/logo.png')}}" alt="">
-            <span class="d-none d-lg-block">NiceAdmin</span>
+            <span class="d-none d-lg-block">{{env('APP_NAME')}}</span>
         </a>
         <i class="bi bi-list toggle-sidebar-btn"></i>
     </div><!-- End Logo -->
@@ -19,10 +19,6 @@
 
     <nav class="header-nav ms-auto">
         <ul class="d-flex align-items-center">
-
-
-
-
 
             <li class="nav-item dropdown pe-3">
 
@@ -41,7 +37,7 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center" href="{{url('profile/'.auth()->user()->name. '/edit')}}">
                             <i class="bi bi-person"></i>
                             <span>My Profile</span>
                         </a>
@@ -55,7 +51,7 @@
                     </li>
 
                     <li>
-                        <a class="dropdown-item d-flex align-items-center" href="#">
+                        <a class="dropdown-item d-flex align-items-center" href="{{route('user.contact')}}">
                             <i class="bi bi-question-circle"></i>
                             <span>Need Help?</span>
                         </a>
