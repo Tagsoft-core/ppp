@@ -14,85 +14,14 @@
 
 <section class="section dashboard">
     <div class="row">
-
-        <!-- Left side columns -->
-        <div class="col-lg-8">
-            <div class="row">
-
-                <!-- Sales Card -->
-                <div class="col-xxl-4 col-md-6">
-                    <div class="card info-card sales-card">
-
-                        <div class="card-body">
-                            <h5 class="card-title">Orders <span>| Schedule</span></h5>
-
-                            <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-cart"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <h6>2</h6>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div><!-- End Sales Card -->
-
-                <!-- Revenue Card -->
-                <div class="col-xxl-4 col-md-6">
-                    <div class="card info-card revenue-card">
-
-                        <div class="card-body">
-                            <h5 class="card-title">Orders <span>| Picked up</span></h5>
-
-                            <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-currency-dollar"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <h6>7</h6>
-
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div><!-- End Revenue Card -->
-
-                <!-- Customers Card -->
-                <div class="col-xxl-4 col-xl-12">
-
-                    <div class="card info-card customers-card">
-
-                        <div class="card-body">
-                            <h5 class="card-title">Orders <span>| Total</span></h5>
-
-                            <div class="d-flex align-items-center">
-                                <div class="card-icon rounded-circle d-flex align-items-center justify-content-center">
-                                    <i class="bi bi-people"></i>
-                                </div>
-                                <div class="ps-3">
-                                    <h6>9</h6>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                </div><!-- End Customers Card -->
-
-            </div>
-        </div><!-- End Left side columns -->
-
         <!-- Right side columns -->
-        <div class="col-lg-4">
+        <div class="col-lg-6">
 
             <!-- Recent Activity -->
             <div class="card">
 
                 <div class="card-body">
-                    <h5 class="card-title">Recent Orders <span>| List</span></h5>
+                    <h5 class="card-title">Recent Packages <span>| List</span></h5>
 
                     <div class="activity">
 

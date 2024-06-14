@@ -4,7 +4,7 @@
     <ul class="sidebar-nav" id="sidebar-nav">
 
         <li class="nav-item">
-            <a class="nav-link " href="{{url('/')}}">
+            <a class="nav-link " href="{{url('/home')}}">
                 <i class="bi bi-grid"></i>
                 <span>Dashboard</span>
             </a>
@@ -21,7 +21,7 @@
         <li class="nav-item">
             <a class="nav-link collapsed" href="{{route('user.order.list')}}">
                 <i class="bi bi-journal-text"></i>
-                <span>Orders</span>
+                <span>Package History</span>
             </a>
         </li>
 
@@ -33,9 +33,9 @@
         </li>
 
         <li class="nav-item">
-            <a class="nav-link collapsed" target="_blank" href="https://demo.developmentsvr.com/Pickpack/faqs/">
+            <a class="nav-link collapsed" target="_blank" href="{{env('WEB_URL')}}faqs/">
                 <i class="bi bi-question-circle"></i>
-                <span>F.A.Q</span>
+                <span>FAQs</span>
             </a>
         </li><!-- End F.A.Q Page Nav -->
 

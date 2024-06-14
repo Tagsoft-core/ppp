@@ -12,7 +12,11 @@
 <div class="card">
     <div class="card-header @role('admin', true) bg-secondary text-white @endrole">
 
-        Welcome {{ Auth::user()->name }}
+        Welcome {{ Auth::user()->name }} to PickPackPost
+        @role('admin', true)
+            Admin
+        @endrole
+            portal
 
         @role('admin', true)
             <span class="pull-right badge badge-primary" style="margin-top:4px">

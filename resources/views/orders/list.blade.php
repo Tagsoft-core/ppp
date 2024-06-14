@@ -52,6 +52,7 @@
                                 <thead class="thead">
                                 <tr>
                                     <th>QR</th>
+                                    <th>Identifier</th>
                                     <th>User</th>
                                     <th>Title</th>
                                     <th>Description</th>
@@ -69,6 +70,7 @@
                                 @foreach($requests as $request)
                                     <tr>
                                         <td>{!! $request->qr_code !!}</td>
+                                        <td>{{$request->slug}}</td>
                                         <td><a href="{{url('users/' . $request->user->id)}}" target="_blank">{{$request->user->first_name .' '. $request->user->last_name}}</a></td>
                                         <td>{{$request->title}}</td>
                                        <td>{{$request->description}}</td>

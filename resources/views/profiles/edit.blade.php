@@ -266,11 +266,7 @@
                                                             {{ trans('profile.changePwPill') }}
                                                         </a>
                                                     </li>
-                                                    <li class="nav-item bg-info">
-                                                        <a data-toggle="pill" href="#deleteAccount" class="nav-link danger-pill-trigger text-white">
-                                                            {{ trans('profile.deleteAccountPill') }}
-                                                        </a>
-                                                    </li>
+
                                                 </ul>
                                                 <div class="tab-content">
 

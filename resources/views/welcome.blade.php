@@ -72,29 +72,29 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        @role('admin', true)
+                        <a href="{{ url('/home') }}">Admin Portal</a>
+                            @else
+                            <a href="{{ url('/home') }}">MyPickPackPost</a>
+                        @endrole
+
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
                         @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
+                            <a href="{{ route('register') }}">Sign Up</a>
                         @endif
                     @endauth
                 </div>
             @endif
             <div class="content">
                 <div class="title m-b-md">
-                    {{env('APP_NAME')}}<br />
-                    <small>
-                       Version 1.1
-                    </small>
+                    <img src="{{asset('assets/img/logo.png')}}" width="50%" alt="">
                 </div>
                 <div class="links">
-                    <a href="{{url('home')}}">Dashboard</a>
-                    <a href="#">Docs</a>
-                    <a href="#">Terms</a>
+                    <a href="{{url('home')}}">Home</a>
                     <a href="#">News</a>
-                    <a href="#">Blog</a>
+                    <a href=" {{env('WEB_URL')}}contact-us/">Contact Us</a>
                 </div>
             </div>
         </div>
